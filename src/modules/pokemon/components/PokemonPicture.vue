@@ -1,7 +1,7 @@
 <!--crea un componente que se se busque la imagen de dreamwolrd de la api de pokemon e inserrtala en un img-->
 <template>
   <section class="flex flex-col items-center justify-center w-full h-full">
-    <img :src="image" alt="pokemon" class="w-1/2 h-1/2" />
+    <img :src="image" alt="pokemon" class="brightness-0" />
   </section>
 </template>
 
@@ -13,4 +13,13 @@ const image = ref(
 );
 </script>
 
-<style scoped></style>
+<style scoped>
+/*que la imagen no sea seleccionable*/
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
+</style>

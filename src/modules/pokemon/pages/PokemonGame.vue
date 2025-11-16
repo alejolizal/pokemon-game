@@ -7,17 +7,20 @@
     Por lo tanto, el usuario verá la sección del juego directamente.
   -->
   <section v-if="false" class="flex flex-col items-center justify-center w-full h-screen">
-    <h1 class="text-3xl">Espere por Favor</h1>
+    <h1 class="m-5">Espere por Favor</h1>
     <h3 class="animate-pulse">Cargando lista de pokemones...</h3>
   </section>
-  <section class="flex flex-col items-center justify-center w-full h-screen">
-    <h1 class="text-3xl">¿Quien es ese pokemon?</h1>
+  <section class="flex flex-col items-center justify-center w-full">
+    <h1 class="m-5">¿Quien es ese pokemon?</h1>
     <pokemon-picture />
+
   </section>
 
 </template>
 
 <script setup lang="ts">
 import PokemonPicture from '../components/PokemonPicture.vue';
+import { usePokemonGame } from '../composables/usePokemonGame';
+const { gameStatus } = usePokemonGame();
 </script>
 <style scoped></style>
